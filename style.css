@@ -1,57 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --col-main: #6fe300;
+    --col-bg-header: #111;
+    --col-bg-main: #212121;
+    --col-black: #000;
+    --col-white: #fff;
+
+    --font-family: 'Raleway', 'Arial', sans-serif;
+
+    --border: 1px solid white;
+}
 body{
-    background-color: #212121;
+    background-color: var(--col-bg-main);
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--font-family);
     margin: 0;
 }
 header{
-    background-color: #111;
-    color: #6fe300;
+    position: relative;
+    background-color: var(--col-bg-header);
+    color: var(--col-main);
     width: 100%;
     height: 4rem;
     top: 0;
+    border-bottom: var(--col-main) solid 1px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+#loki{
+    position: relative;
+    height: 100%;
     display: flex;
     align-items: center;
-    border-bottom: #6fe300 solid 1px;
-}
-header h1{
-    margin-left: 1rem;
-    display: inline;
+    justify-content: center;
+    color: var(--col-main);
     text-decoration: none;
+    font-size: 2em;
+    font-weight: 400;
 }
-header nav, header li{
-    display: inline-block;
-    list-style: none;
+#loki::after{
+    content: '';
+    position: absolute;
+    background-color: var(--col-main);
+    width: 1px;
+    height: 50%;
+    right: 0;
 }
 header nav{
-    width: 50%;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-header li{
-    text-align: center;
-    width: 20%;
+#main-nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
 }
-header ul{
-    padding: 0;
+#main-nav > li{
+    display: inline-block;
+    width: 13%;
+    height: 60%;
 }
-header .linklista{
-    text-align: center;
-    border-radius: .3rem;
-    margin: 1%;
-    padding: 1%;
-    transition: .3s;
-}
-header a:link, header a:visited{
-    color: #6fe300;
+#main-nav > li > a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: var(--col-main);
     text-decoration: none;
-    font-weight: bold;
+    font-family: var(--font-family);
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    transition: 300ms;
 }
-header .linklista:hover{
-    color: #111;
-    background-color: #6fe300;
-    font-weight: bold;
+#main-nav > li > a:hover{
+    background-color: var(--col-main);
+    color: var(--col-black);
 }
-header li::after{
-    content: "\25BE";
-    margin-left: 10%;
+#main-nav li a:hover::after{
+    animation: juicy 1s infinite ease-in-out;
+}
+@keyframes juicy {
+    50%{
+        transform: translateX(-5px);
+    }
+}
+#li-dis-web:hover #sec-nav{
+    display: block;
+}
+#li-dis-web{
+    position: relative;
+}
+#sec-nav{
+    display: none;
+    border: var(--col-main) 1px solid;
+    position: absolute;
+    transition: 200ms;
+    width: 99%;
+    list-style: none;
+    padding: 0;
+    border-radius: 7px;
+    background-color: var(--col-bg-header);
+}
+#sec-nav li{
+    position: relative;
+    width: 101%;
+    height: 40px;
+}
+#sec-nav li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--col-main);
+    text-decoration: none;
+    font-family: var(--font-family);
+    transition: 300ms;
+}
+#sec-nav li:nth-child(3) a{
+    height: 101%;
+}
+#sec-nav li a:hover{
+    background-color: var(--col-main);
+    color: var(--col-black);
+}
+#sec-nav li:nth-child(1) a{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+#sec-nav li:nth-child(3) a{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+#sec-nav li a::after{
+    content: '\25B8';
+    position: absolute;
+    right: 10px;
+}
+#main-nav > li > a::after{
+    content: '\25B8';
+    position: absolute;
+    right: 10px;
 }
