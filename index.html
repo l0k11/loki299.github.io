@@ -1,63 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Web</title>
+    <title>Random Dog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <script defer src="index.js"></script>
 </head>
-<body>
-    <div id="pc-header">
-        <a href="index.html" id="pc-loki">LOKI</a>
-        <nav>
-            <ul id="pc-main-nav">
-                <li id="li-dis-web"><a href="content/dis-web.html">Diseño Web</a>
-                    <ul id="sec-nav">
-                        <li><a href="content/dis-web/html.html">HTML</a></li>
-                        <li><a href="content/dis-web/css.html">CSS</a></li>
-                        <li><a href="content/dis-web/js.html">JavaScript</a></li>
-                    </ul>
-                </li>
-                <li><a href="content/java.html">Java</a></li>
-                <li><a href="content/python.html">Python</a></li>
-                <li><a href="content/php.html">PHP</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div id="movil-header">
-        <div id="movil-btn-menu">
-            <button id="movil-ion-menu"><ion-icon id="movil-ion-menu-ion-icon" name="menu-outline"></ion-icon></button>
-            <button id="movil-ion-close"><ion-icon id="movil-ion-close-ion-icon" name="close-outline"></ion-icon></button>
-        </div>
-        <a href="index.html" id="movil-loki">LOKI</a>
-        <nav>
-            <div id="container-movil-main-nav">
-                <ul id="movil-main-nav">
-                    <li id="li-dis-web"><a href="content/dis-web.html">Diseño Web</a><ion-icon name="caret-down-outline"></ion-icon>
-                        <ul id="movil-sec-nav">
-                            <li><a href="content/dis-web/html.html">HTML<ion-icon name="caret-forward-outline"></ion-icon></a></li>
-                            <li><a href="content/dis-web/css.html">CSS<ion-icon name="caret-forward-outline"></ion-icon></a></li>
-                            <li><a href="content/dis-web/js.html">JavaScript<ion-icon name="caret-forward-outline"></ion-icon></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="content/java.html">Java<ion-icon name="caret-forward-outline"></ion-icon></a></li>
-                    <li><a href="content/python.html">Python<ion-icon name="caret-forward-outline"></ion-icon></a></li>
-                    <li><a href="content/php.html">PHP<ion-icon name="caret-forward-outline"></ion-icon></a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <main>
-        <div id="main-container">
-            <div id="head-index">
-                <h1>LOKI</h1>
-                <h2>Bienvenido a mi Web</h2>
+<body onload="firstPic()">
+    <div id = "main">
+        <div id="left">
+            <div id="main-content">
+                <span id="main-h1">
+                    <h1 onclick="nextPic()">Random Dog Pic</h1>
+                </span>
+                <span id="main-btn">
+                    <button onclick="nextPic()">Another One</button>
+                </span>
             </div>
         </div>
-    </main>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <div id="right">
+            <div id="pic-container"></div>
+        </div>
+    </div>
 </body>
 </html>
